@@ -2,17 +2,17 @@
 
 class Disk extends AbstractSegment implements SegmentInterface
 {
+
     private $total;
     private $free;
-    
-    
+
     public function getSegmentData()
     {
         $this->init();
-        
-        $pc = substr((100 / $this->total) * $this->free, 0,4);
-        return "df:". $pc. "%";
-        
+        if ($this->total) {
+            $pc = substr((100 / $this->total) * $this->free, 0, 4);
+            return "df:" . $pc . "%";
+        }
     }
 
     private function init()
