@@ -67,7 +67,9 @@ class DB
 
     private function loadFile()
     {
-        $this->data = json_decode(file_get_contents($this->file), true);
+        if (file_exists($this->file)) {
+            $this->data = json_decode(file_get_contents($this->file), true);
+        }
     }
 
     private function saveFile()

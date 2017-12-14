@@ -11,7 +11,6 @@ class Autoloader
         "Engine/Abstractions",
         "Engine/Interfaces",
         "Segments",
-        "Settins"
     );
 
     public static function load($className)
