@@ -2,7 +2,6 @@
 
 class Application
 {
-
     private $segmentsOutputCode;
     private $argv;
     private $argc;

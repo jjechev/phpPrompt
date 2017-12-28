@@ -49,4 +49,8 @@ return [
         "segmentStyle" => [],
         "additionalSegmentStyle" => []
     ],
+    "Shell" => [
+        "segmentStyle" => [],
+        "additionalSegmentStyle" => []
+    ],
 ];

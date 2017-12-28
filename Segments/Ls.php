@@ -18,8 +18,10 @@ class Ls extends AbstractSegment implements SegmentInterface
 
     public function getAdditionalSegmentData()
     {
-        exec('ls -1q | wc -l', $out);
-        return "ls: all:" . $this->countFiles . " normal:" . $out[0] . " hidden:" . ($this->countFiles - $out[0]);
+        $filesize = exec('du -sh 2>/dev/null');
+        
+        exec('ls -1q | wc -l', $normalFiles);
+        return "ls: all:" . $this->countFiles . " normal:" . $normalFiles[0] . " hidden:" . ($this->countFiles - $normalFiles[0]). " | total:".$filesize;
     }
 
 }
