@@ -3,7 +3,7 @@
 return [
     "Alert" => [
         "segmentStyle" => [Codes::TEXT_COLOR_LIGHT_RED],
-        "additionalSegmentStyle" => []
+        "additionalSegmentStyle" => [Codes::TEXT_COLOR_LIGHT_RED]
     ],
     "Clock" => [
         "segmentStyle" => [Codes::TEXT_COLOR_WHITE, Codes::TEXT_STYLE_DIM],

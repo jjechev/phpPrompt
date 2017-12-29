@@ -14,7 +14,18 @@ class Alert extends AbstractSegment implements SegmentInterface
 
     public function getSegmentData()
     {
-        return implode($this->segmentElements);
+        if ($this->segmentElements) {
+            return "[alert]";
+        }
+    }
+
+    public function getAdditionalSegmentData()
+    {
+        if ($this->segmentElements) {
+            return "alert:\n"
+                    . $this->getStyleCode([Codes::RESET_ALL_ATTRIBUTES])
+                    . implode($this->segmentElements);
+        }
     }
 
     private function init()
@@ -22,7 +33,7 @@ class Alert extends AbstractSegment implements SegmentInterface
         if (file_exists(self::ALERT_FILE)) {
             $alertData = trim(file_get_contents(self::ALERT_FILE));
             if ($alertData) {
-                $this->segmentElements[] = "[{$alertData}]";
+                $this->segmentElements[] = "{$alertData}";
             }
         }
     }

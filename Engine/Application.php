@@ -115,6 +115,7 @@ class Application
                 $this->segmentsOutputCode[] = "\[\033[00m\]";
                 /* new line */
                 $this->segmentsOutputCode[] = '\n';
+                $this->segmentsOutputCode[] = '\n';
             }
         }
         $this->segmentsOutputCode[] = '\n';
