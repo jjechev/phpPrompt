@@ -2,6 +2,7 @@
 
 class Application
 {
+
     private $segmentsOutputCode;
     private $argv;
     private $argc;
@@ -83,7 +84,11 @@ class Application
     private function getSegmentInstance($segmentName)
     {
         if (!isset($this->container[$segmentName])) {
-            $this->container[$segmentName] = new $segmentName;
+            if (class_exists($segmentName)) {
+                $this->container[$segmentName] = new $segmentName;
+            } else {
+                return $this->container[$segmentName] = new NullObject();
+            }
         }
         return $this->container[$segmentName];
     }

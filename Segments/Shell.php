@@ -3,9 +3,9 @@
 class Shell extends AbstractSegment implements SegmentInterface
 {
 
-    public function getSegmentData()
+    public function getAdditionalSegmentData()
     {
-        return '\s@\V';
+        return 'shell version: \s \V';
     }
 
 }

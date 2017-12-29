@@ -51,7 +51,6 @@ return [
     ],
     "Shell" => [
         "segmentStyle" => [Codes::TEXT_COLOR_LIGHT_YELLOW, Codes::BACKGROUND_COLOR_BLUE],
-        "additionalSegmentStyle" => []
+        "additionalSegmentStyle" => [Codes::TEXT_COLOR_WHITE, Codes::TEXT_STYLE_DIM]
     ],
 ];
-//shell
