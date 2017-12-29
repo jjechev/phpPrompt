@@ -2,4 +2,7 @@
 
 require_once 'Engine/Autoloader.php';
 
-echo (new Application($argv, $argc));
+$theme = 'default';
+
+$prompt = new Application($argv, $argc, $theme);
+echo $prompt;

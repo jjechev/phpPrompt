@@ -12,9 +12,8 @@ class Application
     private $db;
     private $theme;
     private $doubleClickTime = 0.18;
-    private $themeName = "default";
 
-    public function __construct($argv, $argc)
+    public function __construct($argv, $argc, $themeName = 'default')
     {
         array_shift($argv);
         $this->argv = $argv;
@@ -23,7 +22,7 @@ class Application
         $this->segments = array_map('ucfirst', $argv);
 
         $this->db = DB::getInstance();
-        $this->theme = new Theme($this->themeName);
+        $this->theme = new Theme($themeName);
         $this->init();
     }
 
@@ -36,7 +35,7 @@ class Application
     {
         $this->generateDoubleClick();
         $this->generatePS1();
-        $this->lastExecutionTime();
+        $this->setExecutionTime();
     }
 
     private function generateDoubleClick()
@@ -115,13 +114,12 @@ class Application
                 $this->segmentsOutputCode[] = "\[\033[00m\]";
                 /* new line */
                 $this->segmentsOutputCode[] = '\n';
-                $this->segmentsOutputCode[] = '\n';
             }
         }
         $this->segmentsOutputCode[] = '\n';
     }
 
-    private function lastExecutionTime()
+    private function setExecutionTime()
     {
         $this->db->set('time', $this->microtime_float());
     }

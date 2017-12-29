@@ -7,7 +7,12 @@ class Theme extends Codes
 
     public function __construct($theme)
     {
-        $this->themeData = require __DIR__ . "/../Themes/" . $theme . ".php";
+        $file = __DIR__ . "/../Themes/" . $theme . ".php";
+        if (file_exists($file)) {
+            $this->themeData = require $file;
+        }else{
+            $this->themeData = [];
+        }
     }
 
     public function getSegmentCodes($segmentName)
@@ -23,4 +28,5 @@ class Theme extends Codes
             return $this->getStyleCode($this->themeData[$segmentName]['additionalSegmentStyle']);
         }
     }
+
 }
