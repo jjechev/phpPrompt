@@ -11,7 +11,7 @@ return [
     ],
     "Disk" => [
         "segmentStyle" => [Codes::TEXT_COLOR_LIGHT_YELLOW, Codes::BACKGROUND_COLOR_BLUE],
-        "additionalSegmentStyle" => []
+        "additionalSegmentStyle" => [Codes::TEXT_COLOR_WHITE, Codes::TEXT_STYLE_DIM]
     ],
     "Git" => [
         "segmentStyle" => [Codes::BACKGROUND_COLOR_RED],
@@ -26,7 +26,7 @@ return [
         "additionalSegmentStyle" => []
     ],
     "Load" => [
-        "segmentStyle" => [],
+        "segmentStyle" => [Codes::TEXT_COLOR_LIGHT_YELLOW, Codes::BACKGROUND_COLOR_BLUE],
         "additionalSegmentStyle" => [Codes::TEXT_COLOR_WHITE, Codes::TEXT_STYLE_DIM]
     ],
     "Ls" => [
